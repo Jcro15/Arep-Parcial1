@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import edu.escuelaing.arep.model.CustomList;
 import edu.escuelaing.arep.services.ListServices;
 import edu.escuelaing.arep.services.ListServicesImpl;
+import org.json.JSONObject;
 
 import java.util.LinkedList;
 
@@ -13,8 +14,8 @@ public class SparkWebApp {
     /**
      *  Función encargada de inicializar la aplicación, contiene la implementación de dos endpoints usando el micro
      *  framework Spark, los endpoints mencionados son "Get /" que se encarga de retornar el archivo index.html con la
-     *  interfaz gráfica de la aplicación y "Post /calcular" que calcula la media y la desviación estándar a partir
-     *  de un conjunto de datos recibido
+     *  interfaz gráfica de la aplicación y "Post /calcular" que calcula la media y la suma  a partir
+     *  de un conjunto de datos recibido, este conjunto de datos es ordenado y retornado
      * @param args args
      */
     public static void main(String[] args) {
@@ -35,9 +36,13 @@ public class SparkWebApp {
                 list.add(Integer.parseInt(i));
             }
             list=services.sort(list);
+            JSONObject jsObject = new JSONObject();
             int sum=services.sum(list);
             double mean=services.mean(list);
-            return new Gson().toJson("{ \"list\": \""+list+"\", \"media\": \""+mean+"\", \"sum\": \""+sum+"\"}") ;
+            jsObject.put("list", list);
+            jsObject.put("media",mean);
+            jsObject.put("sum",sum);
+            return jsObject;
         });
     }
 

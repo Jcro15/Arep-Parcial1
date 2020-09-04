@@ -9,10 +9,15 @@ import java.net.URL;
 
 public class Client {
     public static void main(String[] args) {
+        try {
+            postTest();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    public void performPostCall() throws IOException {
+    public static void postTest() throws IOException {
         //Link de heroku
         URL url = new URL("https://arep-parcial-rojas.herokuapp.com/calcular");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -30,6 +35,7 @@ public class Client {
                 response.append(responseLine.trim());
             }
             System.out.println(response.toString());
+
         }
     }
 }

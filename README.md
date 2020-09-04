@@ -1,28 +1,4 @@
-# AREP-Laboratorio 2- Ejercicio Heroku-Spark
-
-El objetivo de este laboratorio crear un programa para calcular la media y 
-la desviación estándar de n números reales que se leen de una página web.
-
-Para esto se creó una implementación propia de una LinkedList y un módulo
-de estadísticas.Además se utilizó el micro-framework Spark para implementar
- una API-REST que comunica la página web con los servicios de la aplicación.
- Los detalles del diseño se pueden encontrar en el  documento [Informe de diseño.pdf](Informe de diseño.pdf)
-
-En la siguiente tabla se presentan los valores con los que se
-probará la implementación
-
-![tabla1](resources/tabla1.jpg)
-
-Los valores esperados se presentan a continuación
-![tabla2](resources/tabla2.jpg)
-
-Finalmente, estos fueron los resultados obtenidos al calcular la media y la
-desviación estándar utilizando la aplicación web con los datos propuestos
-anteriormente
-
-![resultados](resources/resultados1.jpg)
-![resultados2](resources/resultados2.jpg)
-
+# Parcial primer tercio
 
 
 ## Pre-requisitos
@@ -33,7 +9,7 @@ anteriormente
 
 Para descargar el proyecto se debe usar 
 ```
-git clone https://github.com/Jcro15/Lab-SparkWeb.git
+git clone https://github.com/Jcro15/Arep-Parcial1
 ```
 
 Una vez descargado el proyecto este debe compilarse con la siguiente instrucción
@@ -41,11 +17,6 @@ Una vez descargado el proyecto este debe compilarse con la siguiente instrucció
 ```
 mvn package 
 ```
-Para utilizar la api local, se debe comentar la línea 5 y descomentar la línea 4
-del archivo ubicado en /src/main/resources/js/app.js
-
-![urls](resources/urls.jpg)
-
 
 Para ejecutar la aplicación se debe usar el comando 
 
@@ -64,7 +35,7 @@ mvn javadoc:javadoc
 ```
 
 ## Enlace Heroku
-  [Despliegue en Heroku](https://whispering-lake-79074.herokuapp.com/)
+  [Despliegue en Heroku](https://arep-parcial-rojas.herokuapp.com/calcular)
 
 ## Construido con
 
