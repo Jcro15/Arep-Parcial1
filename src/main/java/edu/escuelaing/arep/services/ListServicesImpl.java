@@ -4,9 +4,17 @@ import edu.escuelaing.arep.model.CustomList;
 
 import java.util.LinkedList;
 
-public class ListServicesImpl<T extends Comparable<? super T>> implements ListServices{
+/**
+ * Implementación de los servicios de la clase que utiliza una CustomList para ordenar
+ * los elementos
+ */
+public class ListServicesImpl implements ListServices{
 
-
+    /**
+     * Utiliza un objeto de CustomList para ordenar la lista
+     * @param list la lista a ordenar
+     * @return la lista ordenada
+     */
     @Override
     public LinkedList<Integer> sort(LinkedList<Integer> list) {
         CustomList<Integer> customList=new CustomList<Integer>();
